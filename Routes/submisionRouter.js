@@ -91,7 +91,7 @@ router.post('/code',(req,res,next)=>{
         switch(language)
         {
             case 'cpp':{
-                var envData = { OS : "windows" , cmd : "g++",options:{timeout:20000}};
+                var envData = { OS : "linux" , cmd : "gcc",options:{timeout:20000}};
                 compiler.compileCPPWithInput(envData,code,input,(data)=>{
                     if(data.error)
                     {

@@ -20,7 +20,7 @@ router.post('/code',(req,res,next)=>{
         switch(language)
         {
             case 'cpp':{
-                var envData = { OS : "windows" , cmd : "g++",options:{timeout:20000}};
+                var envData = {OS : "linux" , cmd : "gcc",options:{timeout:20000}};
                 compiler.compileCPP(envData,code,(data)=>{
                     if(data.error)
                     {
@@ -40,7 +40,7 @@ router.post('/code',(req,res,next)=>{
                 break;
             }
             case 'java':{
-                var envData={OS:"windows", cmd:"java",options:{timeout:20000}};
+                var envData={OS:"linux", cmd:"java",options:{timeout:20000}};
                 compiler.compileJava(envData,code,(data)=>{
                     if(data.error)
                     {
@@ -111,7 +111,7 @@ router.post('/code',(req,res,next)=>{
                 break;
             }
             case 'java':{
-                var envData={OS:"windows", cmd:"java",options:{timeout:20000}};
+                var envData={OS:"linux", cmd:"java",options:{timeout:20000}};
                 compiler.compileJavaWithInput(envData,code,input,(data)=>{
                     if(data.error)
                     {
